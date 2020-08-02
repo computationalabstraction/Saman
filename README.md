@@ -1,2 +1,2 @@
 # Saman
-समान - Deep Equality checker for Javascript
+समान - Deep Object Equality checker for Javascript
