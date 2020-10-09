@@ -105,4 +105,4 @@ const saman = Object.freeze({
     merge:merge
 });
 
-if(typeof module != "undefined") module.export = saman;
+if(typeof module != "undefined") module.exports = saman;
