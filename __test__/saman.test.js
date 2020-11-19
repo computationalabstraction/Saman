@@ -13,7 +13,44 @@ test('saman.equal', () => {
 });
 
 test('diff', () => {
-
+    let obj1 = { x: 1, y: 2 };
+    let obj3 = {
+        x: 10,
+        y: 20,
+        z: {
+            e: 100,
+            f: 200,
+            j: [0, 1]
+        },
+        k: [10, 20, 30]
+    };
+    let obj4 = {
+        x: 10,
+        z: {
+            e: 30,
+            f: 200,
+            j: [0, 1, 4],
+            c: -5
+        },
+        k: [10]
+    };
+    expect(saman.diff(obj3, obj4)).toEqual({
+        "y": 20,
+        "k": {
+            "1": 20,
+            "2": 30
+        },
+        "z": {
+            "j": {
+                "2": 4
+            },
+            "c": -5,
+            "e": 30
+    }
+    });
+    expect(saman.diff(obj1, obj3)).toEqual({ z: { e: 100, f: 200, j: [0, 1] }, k: [10, 20, 30], x: 10, y: 20 });
+    expect(saman.diff(obj1, obj4)).toEqual({ y: 2, z: { e: 30, f: 200, j: [0, 1, 4], c: -5 }, k: [10], x: 10 });
+    expect(saman.diff(obj1, obj1)).toEqual({})
 });
 
 test('diff2', () => {
@@ -48,12 +85,12 @@ test("dDiff", () => {
         }
     }
     expect(saman.dDiff(obj1, { x: 20 })).toEqual({ y: 20 });
-    expect(saman.dDiff(obj1, { y: 20 })).toEqual({ x: 10 });    
-    expect(saman.dDiff(obj1, {})).toEqual({ x: 10, y: 20 });    
-    expect(saman.dDiff(d1, { x:10, y:20, z:[10,20] }))
-    .toEqual({ z: { '2': 30 }, a: { k: 10, j: 20 } });
-    expect(saman.dDiff(d1, { x:10, y:20, z:[10,20], a:{k:10, j:20 } }))
-    .toEqual({ z: { '2': 30 } });        
+    expect(saman.dDiff(obj1, { y: 20 })).toEqual({ x: 10 });
+    expect(saman.dDiff(obj1, {})).toEqual({ x: 10, y: 20 });
+    expect(saman.dDiff(d1, { x: 10, y: 20, z: [10, 20] }))
+        .toEqual({ z: { '2': 30 }, a: { k: 10, j: 20 } });
+    expect(saman.dDiff(d1, { x: 10, y: 20, z: [10, 20], a: { k: 10, j: 20 } }))
+        .toEqual({ z: { '2': 30 } });
 });
 
 test("merge", () => {
@@ -62,29 +99,3 @@ test("merge", () => {
     expect(saman.merge(obj1, { z: [10, 20, 40], k: 30 }))
         .toEqual({ x: 10, y: 20, z: { 0: 10, 1: 20, 2: 40 }, k: 30 });
 });
-
-
-// let obj3 = {
-//     x:10,
-//     y:20,
-//     z: {
-//         e:100,
-//         f:200,
-//         j:[0,1]
-//     },
-//     k: [10,20,30]
-// };
-
-// let obj4 = {
-//     x:10,
-//     z: {
-//         e:30,
-//         f:200,
-//         j:[0,1,4],
-//         c:-5
-//     },
-//     k: [10]
-// };
-
-// console.log("---------here---------");
-// console.log(JSON.stringify(diff(obj3,obj4),null,4));
