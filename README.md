@@ -5,7 +5,7 @@
 
 </div>
 
-Saman(समान) is a deep object diffing and equality checker for Javascript. The library is concise and has about 7 functions and the distribution size is 659 bytes(Gzipped). 
+Saman(समान) is a deep object diffing and equality checker for Javascript. The library is concise consisting of only 7 functions and the distribution size is 659 bytes(Gzipped). 
 
 #### `Example Code`
 ```javascript
@@ -46,8 +46,19 @@ npm i saman
 ## Documentation
 > Underconstruction
 
-#### `saman.equal(obj1: Object, obj2: Object) -> Object`
-...
+#### `saman.equal(obj1: Object, obj2: Object) -> Boolean`
+This function recursively checks every property for equality of both the objects and returns a boolean.
+
+```javascript
+const { equal } = require("saman");
+
+const obj1 = { x:10, y:20 };
+const obj2 = { x:-1, y:2 };
+
+console.log(equal(obj1,obj2)) // -> false
+console.log(equal(obj1,obj1)) // -> true
+console.log(equal(obj2,obj2)) // -> true
+```
 
 #### `saman.cDiff(obj1: Object, obj2: Object) -> Object`
 ...
