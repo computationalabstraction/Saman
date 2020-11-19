@@ -29,6 +29,7 @@ console.log(diff(obj1,obj2));
 
 
 ## Installation
+> Currently not published on NPM (will be soon)
 
 ### Node
 ```
