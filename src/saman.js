@@ -97,12 +97,12 @@ function diff(oo, no) {
 
 const saman = Object.freeze({
     equal: equal,
-    uDiff:uDiff,
-    cDiff:cDiff,
-    dDiff:dDiff,
-    diff:diff,
-    diff2:diff2,
-    merge:merge
+    uDiff: uDiff,
+    cDiff: cDiff,
+    dDiff: dDiff,
+    diff: diff,
+    diff2: diff2,
+    merge: merge
 });
 
-if(typeof module != "undefined") module.exports = saman;
+if (typeof module != "undefined") module.exports = saman;
