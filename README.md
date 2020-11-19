@@ -5,6 +5,4 @@
 
 </div>
 
-
-समान - Deep Object Diff and Equality checker for Javascript
-
+Saman(समान) is a deep object diffing and equality checker for Javascript. The library is concise and has about 7 functions and the distribution size is 659 bytes(Gzipped). 
