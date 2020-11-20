@@ -123,7 +123,7 @@ console.log(diff(obj1,obj2)) // -> { x:2, y:-7, z:30 }
 ```
 
 #### `saman.diff2(obj1: Object, obj2: Object) -> Object`
-This function is similar to `saman.diff` but instead of returning created, updated and deleted all-together merged in one object without delineation. `saman.diff2` returns an object with 3 props: `created`, `updated` and `deleted` which contain those props respectively.
+This function is similar to `saman.diff` but instead of returning created, updated and deleted props all-together merged in one object without delineation, `saman.diff2` returns an object with 3 props: `created`, `updated` and `deleted` which contain those props respectively.
 
 ```javascript
 const { diff2 } = require("saman");
