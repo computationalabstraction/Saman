@@ -53,7 +53,7 @@ npm i saman
 ```
 
 ## Documentation
-> Underconstruction
+> Underconstruction!
 
 #### `saman.equal(obj1: Object, obj2: Object) -> Boolean`
 This function recursively checks every property for equality of both the objects and returns a boolean.
