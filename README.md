@@ -5,7 +5,7 @@
 
 </div>
 
-Saman(समान) is a deep object diffing and equality checker for Javascript. The library is concise consisting of only 7 functions and the distribution size is 659 bytes(Gzipped). 
+Saman(समान) is a deep object diffing and equality checker for Javascript. The library is concise consisting of only 6 functions and the distribution size is 659 bytes(Gzipped). 
 
 #### `Example Code`
 ```javascript
@@ -111,10 +111,26 @@ console.log(dDiff(obj1,obj1)) // -> {}
 ```
 
 #### `saman.diff(obj1: Object, obj2: Object) -> Object`
-...
+This function recursively checks and reports every created, updated and deleted properties in `obj2` w.r.t.`obj1` and returns an object which contains all the created, updated and deleted props.
+
+```javascript
+const { diff } = require("saman");
+
+const obj1 = { x:10, y:20, z:30 };
+const obj2 = { x:2, y:-7 };
+
+console.log(diff(obj1,obj2)) // -> { x:2, y:-7, z:30 }
+```
 
 #### `saman.diff2(obj1: Object, obj2: Object) -> Object`
-...
+This function is similar to `saman.diff` but instead of returning created, updated and deleted all-together merged in one object without delineation. `saman.diff2` returns an object with 3 props: `created`, `updated` and `deleted` which contain those props respectively.
 
-#### `saman.merge(obj1: Object, obj2: Object) -> Object`
-...
+```javascript
+const { diff2 } = require("saman");
+
+const obj1 = { x:10, y:20, z:30 };
+const obj2 = { x:2, y:-7 };
+
+console.log(diff2(obj1,obj2)) 
+// -> { created:{}, updated: {x:2, y:-7}, deleted: {z:30} }
+```
