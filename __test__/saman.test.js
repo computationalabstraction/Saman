@@ -1,4 +1,4 @@
-const saman = require('../src/saman')
+const saman = require('../dist/saman.min')
 
 // Add more tests
 test('saman.equal', () => {
