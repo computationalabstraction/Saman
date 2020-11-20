@@ -1,7 +1,7 @@
 {
   "name": "saman",
   "version": "0.0.1",
-  "description": "Deep object diff and equality checker",
+  "description": "Deep object diff and equality checker (in beta)",
   "main": "dist/saman.min.js",
   "unpkg": "dist/saman.min.js.gz",
   "scripts": {
