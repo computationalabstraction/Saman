@@ -24,7 +24,19 @@ let obj2 = {
     y:[1,2,-7]
 };
 
-console.log(diff(obj1,obj2));
+console.log(diff(obj1,obj2)); 
+/*
+-> {
+        r: 76,
+        e: 23,
+        i: 10,
+        y: {
+            0: -1,
+            1: -3,
+            2: -7
+        }
+   } 
+*/
 ```
 
 
@@ -74,7 +86,7 @@ console.log(cDiff(obj1,obj2)) // -> { z:30 }
 ```
 
 #### `saman.uDiff(obj1: Object, obj2: Object) -> Object`
-This function recursively checks and reports every updated property in `obj2` w.r.t.`obj1` and returns an object which contains all the updated created props.
+This function recursively checks and reports every updated property in `obj2` w.r.t.`obj1` and returns an object which contains all the updated props.
 
 ```javascript
 const { uDiff } = require("saman");
@@ -86,7 +98,17 @@ console.log(uDiff(obj1,obj2)) // -> { y:-7 }
 ```
 
 #### `saman.dDiff(obj1: Object, obj2: Object) -> Object`
-...
+This function recursively checks and reports every deleted property in `obj2` w.r.t.`obj1` and returns an object which contains all the deleted  props.
+
+```javascript
+const { dDiff } = require("saman");
+
+const obj1 = { x:10, y:20 };
+const obj2 = { y:-7 };
+
+console.log(dDiff(obj1,obj2)) // -> { x:10 }
+console.log(dDiff(obj1,obj1)) // -> {}
+```
 
 #### `saman.diff(obj1: Object, obj2: Object) -> Object`
 ...
