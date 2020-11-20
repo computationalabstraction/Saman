@@ -2,7 +2,7 @@
   "name": "saman",
   "version": "0.0.1",
   "description": "Deep object diff and equality checker",
-  "main": "dist/saman.js",
+  "main": "dist/saman.min.js",
   "unpkg": "dist/saman.min.js.gz",
   "scripts": {
     "test": "jest --coverage",
