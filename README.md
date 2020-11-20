@@ -9,7 +9,7 @@ Saman(समान) is a deep object diffing and equality checker for Javascript
 
 #### `Example Code`
 ```javascript
-const { diff } = require("saman");
+const { equal, diff2 } = require("saman");
 
 let obj1 = {
     i:10,
@@ -24,24 +24,20 @@ let obj2 = {
     y:[1,2,-7]
 };
 
-console.log(diff(obj1,obj2)); 
+let obj3 = { m: "hello", n:"bye" };
+
+console.log(equal(obj3,obj3)); // -> True
+console.log(diff2(obj1,obj2)); // ->
 /*
--> {
-        r: 76,
-        e: 23,
-        i: 10,
-        y: {
-            0: -1,
-            1: -3,
-            2: -7
-        }
-   } 
+{
+  created: { r: 76, e: 23, y: { '2': -7 } },
+  updated: { i: 4, y: { '0': 1, '1': 2 } },
+  deleted: { j: -3 }
+} 
 */
 ```
 
-
 ## Installation
-> Currently not published on NPM (will be soon)
 
 ### Node
 ```
@@ -53,7 +49,7 @@ npm i saman
 ```
 ### Browser Optimized (gzipped)
 ```
-<script src="https://unpkg.com/vachan/dist/browser/saman.min.js.gz"></script>
+<script src="https://unpkg.com/saman/dist/saman.min.js.gz"></script>
 ```
 
 ## Documentation
