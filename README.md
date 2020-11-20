@@ -47,10 +47,6 @@ npm i saman
 ```
 <script src="https://unpkg.com/saman"></script>
 ```
-### Browser Optimized (gzipped)
-```
-<script src="https://unpkg.com/saman/dist/saman.min.js.gz"></script>
-```
 
 ## Documentation
 > Underconstruction!
