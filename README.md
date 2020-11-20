@@ -62,7 +62,7 @@ console.log(equal(obj2,obj2)) // -> true
 ```
 
 #### `saman.cDiff(obj1: Object, obj2: Object) -> Object`
-This function recursively checks and returns every new property created in `obj2` w.r.t.`obj1` and returns an object which contains all the newly created props.
+This function recursively checks and reports every new property created in `obj2` w.r.t.`obj1` and returns an object which contains all the newly created props.
 
 ```javascript
 const { cDiff } = require("saman");
