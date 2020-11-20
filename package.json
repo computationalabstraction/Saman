@@ -2,7 +2,8 @@
   "name": "saman",
   "version": "0.0.1",
   "description": "Deep object diff and equality checker",
-  "main": "index.js",
+  "main": "dist/saman.js",
+  "unpkg": "dist/saman.min.js.gz",
   "scripts": {
     "test": "jest --coverage",
     "build": "npx standard src/saman.js --fix ; node build.js dist saman"
