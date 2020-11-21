@@ -5,7 +5,7 @@
   "main": "dist/saman.min.js",
   "unpkg": "dist/saman.min.js.gz",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "npx jest --coverage",
     "build": "npx standard src/saman.js --fix ; node build.js dist saman"
   },
   "repository": {
