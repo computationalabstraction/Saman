@@ -1,9 +1,8 @@
 <div align="center">
 <img src="./static/saman.png" height="155em" width="300em"/>
-
-## Saman
-
 </div>
+
+<hr><hr/>
 
 Saman(समान) is a deep object diffing and equality checker for Javascript. The library is concise consisting of only 6 functions and the distribution size is 659 bytes(Gzipped). 
 
