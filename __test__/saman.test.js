@@ -14,6 +14,7 @@ test('saman.equal', () => {
   expect(saman.equal({v: "t"},{v: "t4"})).toEqual(false);
   expect(saman.equal({x: -1}, obj1)).toEqual(false);
   expect(saman.equal({x: -1, y:{archan:"patkar"}}, obj1)).toEqual(false);
+  expect(saman.equal({z: 0, k:-1}, obj1)).toEqual(false);
 })
 
 test('diff', () => {
