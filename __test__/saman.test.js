@@ -1,4 +1,5 @@
 const saman = require('../dist/saman.min')
+// const saman = require('../src/saman')
 
 // Add more tests
 test('saman.equal', () => {
@@ -10,6 +11,9 @@ test('saman.equal', () => {
   expect(saman.equal([obj1, false], [obj1, false])).toEqual(true)
   expect(saman.equal([obj1, false, 10], [10, obj1, false])).toEqual(false)
   expect(saman.equal([20, obj1, false, 10], [20, obj1, false, 10])).toEqual(true)
+  expect(saman.equal({v: "t"},{v: "t4"})).toEqual(false);
+  expect(saman.equal({x: -1}, obj1)).toEqual(false);
+  expect(saman.equal({x: -1, y:{archan:"patkar"}}, obj1)).toEqual(false);
 })
 
 test('diff', () => {

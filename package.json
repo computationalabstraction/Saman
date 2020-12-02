@@ -1,12 +1,12 @@
 {
   "name": "saman",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Deep object diff and equality checker (in beta)",
   "main": "dist/saman.min.js",
   "unpkg": "dist/saman.min.js.gz",
   "scripts": {
     "test": "npx jest --coverage",
-    "build": "npx standard src/saman.js --fix ; node build.js dist saman"
+    "build": "node build.js dist saman"
   },
   "repository": {
     "type": "git",

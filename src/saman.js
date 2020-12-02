@@ -16,8 +16,11 @@ if (!Object.is) {
 
 function arrayEquality (a1, a2) {
   if (a1.length !== a2.length) return false
-  let isEqual = false
-  for (const i in a1) isEqual = equal(a1[i], a2[i])
+  let isEqual = true
+  for (const i in a1) {
+    isEqual = isEqual && equal(a1[i], a2[i])
+    if(!isEqual) break;
+  }
   return isEqual
 }
 
@@ -25,15 +28,21 @@ function objectEquality (o1, o2) {
   const f1 = Object.getOwnPropertyNames(o1)
   const f2 = Object.getOwnPropertyNames(o2)
   if (f1.length !== f2.length) return false
-  let isEqual = false
-  for (const p1 in f1) for (const p2 in f2) isEqual = p1 === p2 && equal(o1[p1], o2[p2])
+  let isEqual = true
+  for (const p1 of f1) {
+    for (const p2 of f2) {
+      isEqual = isEqual && p1 === p2 && equal(o1[p1], o2[p2])
+      if(!isEqual) break;
+    }
+    if(!isEqual) break;
+  }
   return isEqual
 }
 
 function equal (a, b) {
   if (Object.is(a, b)) return true
   else if (Array.isArray(a) && Array.isArray(b)) return arrayEquality(a, b)
-  else if (typeof a === 'object' && typeof b === 'object') return objectEquality(a, b)
+  else if ((typeof a === 'object') && (typeof b === 'object')) return objectEquality(a, b)
   return false
 }
 
