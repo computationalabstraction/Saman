@@ -28,13 +28,14 @@ function objectEquality (o1, o2) {
   const f1 = Object.getOwnPropertyNames(o1)
   const f2 = Object.getOwnPropertyNames(o2)
   if (f1.length !== f2.length) return false
-  let isEqual = true
+  let isEqual = false
   for (const p1 of f1) {
     for (const p2 of f2) {
-      isEqual = isEqual && p1 === p2 && equal(o1[p1], o2[p2])
-      if(!isEqual) break;
+      if(p1 === p2) {
+        isEqual = equal(o1[p1], o2[p2])
+        if(!isEqual) return false
+      }
     }
-    if(!isEqual) break;
   }
   return isEqual
 }
