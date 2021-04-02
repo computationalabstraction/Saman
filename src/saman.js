@@ -16,10 +16,10 @@ if (!Object.is) {
 
 function arrayEquality (a1, a2) {
   if (a1.length !== a2.length) return false
-  let isEqual = true
+  let isEqual = false
   for (const i in a1) {
-    isEqual = isEqual && equal(a1[i], a2[i])
-    if(!isEqual) break;
+    isEqual = equal(a1[i], a2[i])
+    if (!isEqual) return false
   }
   return isEqual
 }
@@ -31,9 +31,9 @@ function objectEquality (o1, o2) {
   let isEqual = false
   for (const p1 of f1) {
     for (const p2 of f2) {
-      if(p1 === p2) {
+      if (p1 === p2) {
         isEqual = equal(o1[p1], o2[p2])
-        if(!isEqual) return false
+        if (!isEqual) return false
       }
     }
   }
