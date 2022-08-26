@@ -22,7 +22,7 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "babel-preset-minify": "^0.5.1",
-    "jest": "^27.0.1",
+    "jest": "^29.0.0",
     "standard": "^17.0.0"
   }
 }
